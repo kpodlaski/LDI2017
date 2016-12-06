@@ -1,28 +1,70 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <!--
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>PogodynkaFINAL</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: http://api.openweathermap.org https://ssl.gstatic.com  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: ">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+    <title>Pogodynka</title>
+</head>
+<body>
+    <div data-role="page" id="weather-page" >
+        <div data-role="header" class="header ui-bar-a">
+            <div id="app-title" class="naglowek"> Pogodynka </div>             
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+
+        <div role="main" class="ui-content">
+            <form>
+                <label for="zip-code">Podaj kod pocztowy:</label>
+                <input id="kodPocztowy-input" name="kodPocztowy-input"  placeholder="90-236" class="ui-corner-all" required />
+                <button id="pobierz-pogode-btn" data-role="button" class="ui-btn ui-btn-corner-all ui-icon-search ">Pokaż pogodę</button>
+            </form>
+            <div id="pogoda-data" name="pogoda-data" class="ui-corner-all ui-shadow ukryte">
+                <span id="nazwa" class="ui-bar ui-bar-a "></span>
+                <table>
+                    <tr>
+                        <td>
+                            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ">
+                                <li>Temp:<span id="temperatura"></span> C <img src="" /></li>
+                                <li>Ciśnienie: <span id="cisnienie"></span>hPa</li>
+                                <li>Wiatr: <span id="wiatr"></span> km/h</li>
+                                <li>Wilgotność: <span id="wilgotnosc"></span> %</li>
+                                <li>Wschód słońca: <span id="wschod"></span></li>
+                                <li>Zachód słońca: <span id="zachod"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span><img src="" id="pogoda-icon" name="pogoda-icon" /> </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="error-msg" class="ukryte"></div>
+        </div>
+
+        <footer class="stopka" data-role="footer" data-position="fixed" >
+            <h4><a href="http:\\www.wfis.uni.lodz.pl">Warsztaty: Aplikacje Mobilne WFiIS UŁ</a></h4>
+        </footer>
+
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="scripts/pogoda.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+
+</body>
 </html>
