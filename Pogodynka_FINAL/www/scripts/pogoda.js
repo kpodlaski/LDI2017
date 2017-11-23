@@ -1,4 +1,4 @@
-﻿var OWAppKey = "b1b15e88fa797225412429c1c50c122a1";
+﻿var OWAppKey = "ba4e5e220d6ab917912bc97d8e967ba1";
 
 function pogodaKodPocztowy() {
     var kodPocztowy = $('#kodPocztowy-input').val();
