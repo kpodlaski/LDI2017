@@ -1,6 +1,5 @@
 ﻿var OWAppKey = "64c7b98c91f425ed4bd193334c0bd9d6";
 
-
 function pogodaKodPocztowy() {
     var kodPocztowy = $('#kodPocztowy-input').val();
     $('#pobierz-pogode-btn').click(pogodaKodPocztowy);
@@ -76,7 +75,6 @@ function onGetLocationSuccess(position) {
       'http://api.openweathermap.org/data/2.5/weather?lat='
         + latitude + '&lon=' + longitude + '&appid=' + OWAppKey + '&units=metric';
     console.log('adres ' + adres);
-    $('#pobierz-pogode-btn').prop('disabled', false);
 
     $.getJSON(adres, function (results) {
 
@@ -91,5 +89,4 @@ function onGetLocationSuccess(position) {
 function onGetLocationError(error) {
 
     $('#error-msg').text('Error getting location');
-    $('#pobierz-pogode-btn').prop('disabled', false);
 }

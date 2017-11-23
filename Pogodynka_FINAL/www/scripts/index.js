@@ -4,7 +4,6 @@
 // and then run "window.location.reload()" in the JavaScript Console.
 (function () {
     "use strict";
-
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
@@ -30,7 +29,7 @@
     };
 
     
-    $('#get-weather-btn').click(pogodaKodPocztowy);
-    pogodaGPS();
+    $('#pobierz-pogode-btn').click(pogodaKodPocztowy);
+    $('#pogoda-gps-btn').click(pogodaGPS());
 
 } )();

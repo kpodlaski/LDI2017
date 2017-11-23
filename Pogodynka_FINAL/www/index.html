@@ -7,7 +7,6 @@
     -->
     <meta http-equiv="Content-Security-Policy"
           content="default-src 'self' data: gap: http://api.openweathermap.org https://ssl.gstatic.com  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: ">
-
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -29,6 +28,7 @@
                 <label for="zip-code">Podaj kod pocztowy:</label>
                 <input id="kodPocztowy-input" name="kodPocztowy-input"  placeholder="90-236" class="ui-corner-all" required />
                 <button id="pobierz-pogode-btn" data-role="button" class="ui-btn ui-btn-corner-all ui-icon-search ">Pokaż pogodę</button>
+                <button id="pogoda-gps-btn" data-role="button" class="ui-btn ui-btn-corner-all ui-icon-search ">Pogoda (GPS)</button>
             </form>
             <div id="pogoda-data" name="pogoda-data" class="ui-corner-all ui-shadow ukryte">
                 <span id="nazwa" class="ui-bar ui-bar-a "></span>
